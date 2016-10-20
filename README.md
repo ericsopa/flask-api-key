@@ -1,2 +1,2 @@
 # flask-api-key
-Simple code to authenticate a POST to Flask
+Simple API Key authN using decarators
