@@ -13,7 +13,8 @@ def require_appkey(view_function):
     def decorated_function(*args, **kwargs):
         with open('api.key', 'r') as apikey:
             key=apikey.read().replace('\n', '')
-        if request.args.get('key') and request.args.get('key') == key:
+        #if request.args.get('key') and request.args.get('key') == key:
+        if request.headers.get('x-api-key') and request.headers.get('x-api-key') == key:
             return view_function(*args, **kwargs)
         else:
             abort(401)
