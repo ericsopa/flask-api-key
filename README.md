@@ -10,13 +10,13 @@ The POST is authenticated using an API Key as a parameter.
 Where the key is stored in a file, so the key value is not stored in code.
 Be sure to change the value in api.key when deploying.
 
-##Installation
-####Dependencies
+## Installation
+#### Dependencies
 1. Python 2 or 3
 2. Flask
 3. virtualenv
 
-####Setup
+#### Setup
 ```
 $ cd flask-api-key
 $ virtualenv venv
@@ -26,7 +26,7 @@ $ flask run
  * Running on https://127.0.0.1:443/ (Press CTRL+C to quit)
 ```
 
-##GET Test
+## GET Test
 ```
 curl -k https://127.0.0.1
 Hellow world!
@@ -36,8 +36,8 @@ Flask server output:
 127.0.0.1 - - [23/Oct/2016 14:55:55] "GET / HTTP/1.1" 200 -
 ```
 
-##POST Tests
-###Key in header
+## POST Tests
+### Key in header
 ```
 $ curl -k -H "Content-Type: application/json" -H "x-api-key: eiWee8ep9due4deeshoa8Peichai8Ei2" -X POST -d '{"username":"xyz","password":"xyz"}' https://127.0.0.1/json/
 Posted JSON!
@@ -47,7 +47,7 @@ Flask server output:
 127.0.0.1 - - [23/Oct/2016 14:55:26] "POST /json/ HTTP/1.1" 200 -
 ```
 
-###Key in argument
+### Key in argument
 ```
 curl -k -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"xyz"}' https://127.0.0.1/json/?key=eiWee8ep9due4deeshoa8Peichai8Ei2
 Posted JSON!
